@@ -46,7 +46,7 @@ export default function CustomizePage() {
   
   // Handle alignment change - move elements with circles
   useEffect(() => {
-    if (product.shape !== 'triple-circle') return;
+    if (!product || product.shape !== 'triple-circle') return;
     
     // Calculate position offsets for each circle
     const getCircleOffset = (circleIndex: number) => {
