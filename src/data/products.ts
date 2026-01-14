@@ -55,7 +55,7 @@ export const products: Product[] = [
     category: 'collane',
     shape: 'circle',
     image: '/products/gold-spinner-necklace-1.jpg',
-    dimensions: { width: 20, height: 20 },
+    dimensions: { width: 15, height: 16 },
     material: 'Acciaio Inossidabile',
     colors: ['Oro', 'Oro Rosa'],
     stock: 2,
@@ -84,7 +84,7 @@ export const products: Product[] = [
     category: 'collane',
     shape: 'circle',
     image: '/products/gold-spinner-pendant-1.jpg',
-    dimensions: { width: 22, height: 22 },
+    dimensions: { width: 25, height: 25 },
     material: 'Acciaio Inossidabile',
     colors: ['Oro', 'Argento'],
     stock: 2,
@@ -144,7 +144,7 @@ export const products: Product[] = [
   {
     id: 'col-triple-pendants-01',
     name: 'Set Triplo Ciondoli',
-    description: 'Set di tre ciondoli coordinati in acciaio inossidabile. Perfetti per personalizzazioni multiple. Non anneriscono. Catena: 50 cm.',
+    description: 'Set di tre ciondoli coordinati in acciaio inossidabile. Perfetti per personalizzazioni multiple. Non anneriscono.',
     price: 12.60,
     category: 'collane',
     shape: 'triple-circle',
@@ -173,7 +173,7 @@ export const products: Product[] = [
   {
     id: 'col-bar-mixed-01',
     name: 'Collana Barra Verticale',
-    description: 'Collana con ciondolo a barra verticale in acciaio inossidabile. Ideale per incisioni personalizzate. Catena: 50 cm.',
+    description: 'Collana con ciondolo a barra verticale in acciaio inossidabile. Ideale per incisioni personalizzate.',
     price: 19.81,
     category: 'collane',
     shape: 'bar',
@@ -213,7 +213,7 @@ export const products: Product[] = [
   {
     id: 'pk-heart-01',
     name: 'Portachiavi Cuore',
-    description: 'Portachiavi a forma di cuore in acciaio inossidabile. Perfetto per messaggi personalizzati. Ipoallergenico e resistente. Portachiavi: 30 mm.',
+    description: 'Portachiavi a forma di cuore in acciaio inossidabile. Perfetto per messaggi personalizzati. Ipoallergenico e resistente.',
     price: 12.19,
     category: 'portachiavi',
     shape: 'heart',
@@ -227,7 +227,7 @@ export const products: Product[] = [
   {
     id: 'pk-heart-key-set-01',
     name: 'Set Portachiavi Cuore e Chiave',
-    description: 'Set di portachiavi a forma di cuore e chiave in acciaio inossidabile. Perfetto per coppie. Colori assortiti. Portachiavi: 30 mm.',
+    description: 'Set di portachiavi a forma di cuore e chiave in acciaio inossidabile. Perfetto per coppie. Colori assortiti.',
     price: 13.50,
     category: 'portachiavi',
     shape: 'heart',
@@ -267,7 +267,7 @@ export const products: Product[] = [
   {
     id: 'bra-paw-gold-01',
     name: 'Bracciale Zampa',
-    description: 'Bracciale con charm a forma di zampa in acciaio inossidabile placcato oro. Perfetto per amanti degli animali. Ipoallergenico. Catena: 50 cm.',
+    description: 'Bracciale con charm a forma di zampa in acciaio inossidabile placcato oro. Perfetto per amanti degli animali. Ipoallergenico.',
     price: 15.31,
     category: 'bracciali',
     shape: 'paw',
