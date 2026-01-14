@@ -77,7 +77,7 @@ export default function CustomizePage() {
       const circlePos = getCircleOffset(symbol.circleIndex);
       return { ...symbol, x: circlePos.x, y: circlePos.y };
     }));
-  }, [isAligned, product.shape]);
+  }, [isAligned, product?.shape]);
   
   // For new text input
   const [newText, setNewText] = useState('');
