@@ -46,7 +46,7 @@ export default function CustomizePage() {
   
   // Handle alignment change - move elements with circles
   useEffect(() => {
-    if (!product || product.shape !== 'triple-circle') return;
+    if (!product || product?.shape !== 'triple-circle') return;
     
     // Calculate position offsets for each circle
     const getCircleOffset = (circleIndex: number) => {
@@ -94,20 +94,20 @@ export default function CustomizePage() {
   const currentSideTexts = useMemo(() => {
     const filtered = texts.filter(t => t.side === currentSide);
     // Per triple-circle, filtra anche per circleIndex
-    if (product.shape === 'triple-circle') {
+    if (product?.shape === 'triple-circle') {
       return filtered.filter(t => t.circleIndex === currentCircle);
     }
     return filtered;
-  }, [texts, currentSide, currentCircle, product.shape]);
+  }, [texts, currentSide, currentCircle, product?.shape]);
 
   const currentSideSymbols = useMemo(() => {
     const filtered = symbolElements.filter(s => s.side === currentSide);
     // Per triple-circle, filtra anche per circleIndex
-    if (product.shape === 'triple-circle') {
+    if (product?.shape === 'triple-circle') {
       return filtered.filter(s => s.circleIndex === currentCircle);
     }
     return filtered;
-  }, [symbolElements, currentSide, currentCircle, product.shape]);
+  }, [symbolElements, currentSide, currentCircle, product?.shape]);
   
   // Count elements per side
   const frontCount = texts.filter(t => t.side === 'front').length + symbolElements.filter(s => s.side === 'front').length;
@@ -165,7 +165,7 @@ export default function CustomizePage() {
       rotation: 0,
       side: currentSide,
       curvature: 0,
-      ...(product.shape === 'triple-circle' && { circleIndex: currentCircle })
+      ...(product?.shape === 'triple-circle' && { circleIndex: currentCircle })
     };
     
     setTexts([...texts, newTextElement]);
@@ -184,7 +184,7 @@ export default function CustomizePage() {
       fill: '#2d2d2d',
       rotation: 0,
       side: currentSide,
-      ...(product.shape === 'triple-circle' && { circleIndex: currentCircle })
+      ...(product?.shape === 'triple-circle' && { circleIndex: currentCircle })
     };
     
     setSymbolElements([...symbolElements, newSymbol]);
@@ -268,7 +268,7 @@ export default function CustomizePage() {
     };
 
     const renderShape = () => {
-      switch (product.shape) {
+      switch (product?.shape) {
         case 'heart':
           return (
             <path
@@ -663,7 +663,7 @@ export default function CustomizePage() {
             </div>
 
             {/* Triple Circle Controls (solo per triple-circle) */}
-            {product.shape === 'triple-circle' && (
+            {product?.shape === 'triple-circle' && (
               <div className="mb-6 space-y-4">
                 {/* Circle selector quando SEPARATI */}
                 {!isAligned && (
@@ -885,7 +885,7 @@ export default function CustomizePage() {
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                       <p className="text-gray-400 text-center px-8">
                         Aggiungi testo o simboli<br />sul {currentSide === 'front' ? 'fronte' : 'retro'}
-                        {product.shape === 'triple-circle' && <><br />Cerchio {currentCircle}</>}
+                        {product?.shape === 'triple-circle' && <><br />Cerchio {currentCircle}</>}
                       </p>
                     </div>
                   )}
@@ -1099,10 +1099,10 @@ export default function CustomizePage() {
               <p className="text-sm opacity-80">Stai personalizzando il</p>
               <p className="text-2xl font-bold font-serif">
                 {currentSide === 'front' ? '✨ Fronte' : '🔄 Retro'}
-                {product.shape === 'triple-circle' && ` - Cerchio ${currentCircle}`}
+                {product?.shape === 'triple-circle' && ` - Cerchio ${currentCircle}`}
               </p>
               <p className="text-sm opacity-80 mt-1">
-                {product.shape === 'triple-circle' 
+                {product?.shape === 'triple-circle' 
                   ? 'Scegli quale cerchio personalizzare'
                   : 'Usa il bottone "Gira" per cambiare lato'
                 }
@@ -1145,7 +1145,7 @@ export default function CustomizePage() {
               <div className="bg-white rounded-2xl p-6 border border-[#c9a962]/10 space-y-5">
                 <div>
                   <h3 className="font-serif text-lg font-semibold text-[#2d2d2d]">
-                    Aggiungi Testo ({currentSide === 'front' ? 'Fronte' : 'Retro'}{product.shape === 'triple-circle' ? ` - Cerchio ${currentCircle}` : ''})
+                    Aggiungi Testo ({currentSide === 'front' ? 'Fronte' : 'Retro'}{product?.shape === 'triple-circle' ? ` - Cerchio ${currentCircle}` : ''})
                   </h3>
                   {currentSide === 'back' && (
                     <p className="text-xs text-[#c9a962] mt-1">💡 Incisione retro: +5.00 CHF</p>
@@ -1244,7 +1244,7 @@ export default function CustomizePage() {
                   className="w-full flex items-center justify-center gap-2 py-4 bg-[#c9a962] text-white rounded-xl font-semibold text-lg hover:bg-[#9a7b3c] transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-[#c9a962]/20"
                 >
                   <Plus className="w-5 h-5" />
-                  Aggiungi al {currentSide === 'front' ? 'Fronte' : 'Retro'}{product.shape === 'triple-circle' ? ` - Cerchio ${currentCircle}` : ''}
+                  Aggiungi al {currentSide === 'front' ? 'Fronte' : 'Retro'}{product?.shape === 'triple-circle' ? ` - Cerchio ${currentCircle}` : ''}
                 </button>
               </div>
             )}
@@ -1254,7 +1254,7 @@ export default function CustomizePage() {
               <div className="bg-white rounded-2xl p-6 border border-[#c9a962]/10">
                 <div className="mb-4">
                   <h3 className="font-serif text-lg font-semibold text-[#2d2d2d]">
-                    Scegli un Simbolo ({currentSide === 'front' ? 'Fronte' : 'Retro'}{product.shape === 'triple-circle' ? ` - Cerchio ${currentCircle}` : ''})
+                    Scegli un Simbolo ({currentSide === 'front' ? 'Fronte' : 'Retro'}{product?.shape === 'triple-circle' ? ` - Cerchio ${currentCircle}` : ''})
                   </h3>
                   {currentSide === 'back' && (
                     <p className="text-xs text-[#c9a962] mt-1">💡 Incisione retro: +5.00 CHF</p>
@@ -1320,7 +1320,7 @@ export default function CustomizePage() {
                         >
                           <div className="flex items-center gap-2 flex-1 min-w-0">
                             <span className="truncate" style={{ fontFamily: t.fontFamily }}>{t.text}</span>
-                            {product.shape === 'triple-circle' && t.circleIndex && (
+                            {product?.shape === 'triple-circle' && t.circleIndex && (
                               <span className="text-xs bg-[#c9a962] text-white px-1.5 py-0.5 rounded-full flex-shrink-0">⭕{t.circleIndex}</span>
                             )}
                           </div>
@@ -1340,7 +1340,7 @@ export default function CustomizePage() {
                           <div className="flex items-center gap-2 flex-1">
                             <div className="w-5 h-5">{engravingSymbols[s.symbolKey as SymbolKey]}</div>
                             <span className="text-gray-600">{s.symbolName}</span>
-                            {product.shape === 'triple-circle' && s.circleIndex && (
+                            {product?.shape === 'triple-circle' && s.circleIndex && (
                               <span className="text-xs bg-[#c9a962] text-white px-1.5 py-0.5 rounded-full">⭕{s.circleIndex}</span>
                             )}
                           </div>
@@ -1368,7 +1368,7 @@ export default function CustomizePage() {
                         >
                           <div className="flex items-center gap-2 flex-1 min-w-0">
                             <span className="truncate" style={{ fontFamily: t.fontFamily }}>{t.text}</span>
-                            {product.shape === 'triple-circle' && t.circleIndex && (
+                            {product?.shape === 'triple-circle' && t.circleIndex && (
                               <span className="text-xs bg-[#c9a962] text-white px-1.5 py-0.5 rounded-full flex-shrink-0">⭕{t.circleIndex}</span>
                             )}
                           </div>
@@ -1388,7 +1388,7 @@ export default function CustomizePage() {
                           <div className="flex items-center gap-2 flex-1">
                             <div className="w-5 h-5">{engravingSymbols[s.symbolKey as SymbolKey]}</div>
                             <span className="text-gray-600">{s.symbolName}</span>
-                            {product.shape === 'triple-circle' && s.circleIndex && (
+                            {product?.shape === 'triple-circle' && s.circleIndex && (
                               <span className="text-xs bg-[#c9a962] text-white px-1.5 py-0.5 rounded-full">⭕{s.circleIndex}</span>
                             )}
                           </div>
